@@ -36,7 +36,7 @@ class SectorController extends Controller
 
     public function show(Sector $sector)
     {
-  
+        return response(['data'=>sectorResource::collection($sector)]);
     }
 
     public function update(Request $request, Sector $sector)

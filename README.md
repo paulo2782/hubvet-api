@@ -8,6 +8,8 @@ Rode as migrations
 
 #php artisan migrate
 
+#php artisan passport:install --force
+
 URL Request API 
 
 Login 
@@ -22,7 +24,7 @@ Cadastro Setor
 http://localhost/api/sector
 
 Cadastro Produtos
-http://localhost/api/products (Em desenvolvimento)
+http://localhost/api/products (Em desenvolvimento - (rotas crud criada e tabela))
 
 
 
