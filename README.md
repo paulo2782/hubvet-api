@@ -18,15 +18,12 @@ http://localhost/api/register
 Login
 http://localhost/api/login
 
-Logout
-http://localhost/api/logout
-
-
 Cadastro Setor
 http://localhost/api/sector
 
 Cadastro Produtos
-http://localhost/api/products
+http://localhost/api/products (Em desenvolvimento)
+
 
 
 

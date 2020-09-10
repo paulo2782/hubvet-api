@@ -32,9 +32,13 @@ class AuthController extends Controller
 			if($validator->fails()){
 				return response(['messages'=>$validator->errors()]);
 			}else{
-		        $validatedData['password'] = bcrypt($request->password);
-
-		        $user = User::create($request->all());
+		        $user = new User();
+		        $user->name 		= $request->name;
+		        $user->user 		= $request->user;
+		        $user->accredited 	= $request->accredited;
+		        $user->email 		= $request->email;
+		        $user->password 	= bcrypt($request->password);
+		        $user->save();
 
 		        $accessToken = $user->createToken('authToken')->accessToken;
 	            return response([ 'user' => $user, 'access_token' => $accessToken]);
@@ -43,4 +47,28 @@ class AuthController extends Controller
 	    	return response(['error'=>'Usuário já cadastrado para esse estabelecimento.']);
 	    }     
 	}
+
+	public function login(Request $request)
+	{
+		$rules = [
+				'accredited'=>'required|string|min:3',
+				'user' => 'required|string|min:3|max:25',
+				'password'=>'required|min:6'
+		];
+		
+		$validator = Validator::make($request->all(), $rules);
+		
+		if($validator->fails()){
+			return response(['messages'=>$validator->errors()]);
+		}
+
+		$loginData = $request->all();
+		if (!auth()->attempt($loginData)) {
+            return response(['message' => 'Usuario inválido para o credenciado']);
+        }
+
+        $accessToken = auth()->user()->createToken('authToken')->accessToken;
+        return response(['user' => auth()->user(), 'access_token' => $accessToken]);      
+    }
+
 }
