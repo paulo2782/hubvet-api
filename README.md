@@ -1,8 +1,11 @@
 Desafio Hubvet - BACKEND LARAVEL
 
-Crie o Banco de Dados - hubvet
+Crie o Banco de Dados 
+
+hubvet
+
 usuario: root
-senha: 26031949Pa!
+senha..: 26031949Pa!
 
 Rode as migrations
 
@@ -12,20 +15,22 @@ Rode as migrations
 
 URL Request API 
 
-Login 
-
-Registro
+#Acesso 
+#Registro
 http://localhost/api/register 
 
-Login
+#Login
 http://localhost/api/login
 
-Cadastro Setor
+#Setor
 http://localhost/api/sector
 
-Cadastro Produtos
-http://localhost/api/products (Em desenvolvimento - (rotas crud criada e tabela))
+#Produtos
+http://localhost/api/products
 
+#Rota Lista Produtos
+
+#Rota Lista Setor
 
 
 

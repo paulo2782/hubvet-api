@@ -30,6 +30,7 @@ class SectorController extends Controller
         }else{
             $sector = new Sector();
             $sector->name = $request->name;
+            
             $sector->save();
         }
     }
