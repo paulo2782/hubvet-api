@@ -22,7 +22,7 @@ class ProductController extends Controller
     {
         $rules = ['name' => 'required|string|min:3|max:150',
                 'codebar'=>'required|unique:products|string|min:0|max:13',
-                'value'=>'required|numeric|between:0,99.99',
+                'value'=>'required|numeric|min:0',
                 'id_user'=>'required|numeric',
                 'id_sector'=>'required|numeric'
             ];
