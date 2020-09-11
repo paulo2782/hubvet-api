@@ -1,3 +1,4 @@
+
 Desafio Hubvet - BACKEND LARAVEL
 
 Crie o Banco de Dados 
@@ -32,5 +33,6 @@ http://localhost/api/products
 
 #Rota Lista Setor
 
-
+#DESAFIO 2 
+https://github.com/paulo2782/hubvet-class.git
 

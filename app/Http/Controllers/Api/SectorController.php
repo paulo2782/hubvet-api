@@ -30,7 +30,7 @@ class SectorController extends Controller
         }else{
             $sector = new Sector();
             $sector->name = $request->name;
-            
+
             $sector->save();
         }
     }
@@ -60,6 +60,6 @@ class SectorController extends Controller
         //
         $sector->delete();
 
-        return response(['message' => 'Registro Apagado']);
+        return response(['message' => 'Registro ID '.$sector->id.' Apagado']);
     }
 }

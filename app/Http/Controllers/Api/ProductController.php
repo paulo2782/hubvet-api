@@ -51,11 +51,25 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product)
     {
-        //
+         $rules = ['name' => 'required|string|min:3|max:150',
+                'codebar'=>'required|unique:products|string|min:0|max:13',
+                'value'=>'required|numeric|min:0',
+                'id_user'=>'required|numeric',
+                'id_sector'=>'required|numeric'
+            ];
+
+        $validator = Validator::make($request->all(), $rules);
+        if($validator->fails()){
+            return response(['messages'=>$validator->errors()]);
+        }else{
+            $product->update($request->all());
+            return response(['message' => new productResource($product), 'message' => 'OK'], 200);
+        }
     }
 
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return response(['message' => 'Registro ID '.$product->id.' Apagado']);
     }
 }
