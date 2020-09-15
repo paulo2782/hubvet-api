@@ -14,6 +14,10 @@ Rode as migrations
 
 #php artisan passport:install --force
 
+#php artisan db:seed --class=ProductSeeder
+
+#php artisan db:seed --class=SectorSeeder
+
 URL Request API 
 
 #Acesso 
